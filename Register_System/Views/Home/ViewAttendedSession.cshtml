@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Register_System.Models.Session>
+
+@{
+    ViewBag.Title = "ViewAttendedSession";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Sessions Attended</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.Label("User")</th>
+            <th>@Html.Label("Title")</th>
+            <th>@Html.Label("Date")</th>
+            <th>@Html.Label("Description")</th>
+            <th>@Html.Label("Session Code")</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var r in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(x=>r.UserID)</td>
+            <td>@Html.DisplayFor(x=>r.SessionTitle)</td>
+            <td>@Html.DisplayFor(x=>r.SessionDate)</td>
+            <td>@Html.DisplayFor(x=>r.SessionDescription)</td>
+            <td>@Html.DisplayFor(x=>r.UniqueCode)</td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+
+

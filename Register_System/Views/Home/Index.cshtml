@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+@if (Request.IsAuthenticated)
+{
+    if (Session["UserType"] != null)
+    {
+
+        if (@Session["UserType"].ToString() == "1")
+        {
+            using (Html.BeginForm())
+            {
+                <p>Welcome Admin: @Context.User.Identity.Name</p>
+
+                <h2>Create a new Session</h2>
+
+
+                <h4>A one-time code will be created</h4>
+
+                <br />
+
+                <div class="align-content-center">
+                    <input type="submit" value="Create a new Session" class="btn btn-success btn-outline-secondary" />
+                </div>
+
+            }
+        }
+        else
+        {
+
+            <div class="jumbotron">
+                <h1>@ViewBag.Greeting @Context.User.Identity.Name</h1>
+                <h2>Check-In or View All your sessions at once!</h2>
+                <p>
+                    RegiStrat allows you to store your all your sessions at once,
+                    Provide feedback, and so much more....
+                </p>
+
+
+                <div class="text-center">
+                    @Html.ActionLink("Check-In Now!", "CheckInController")
+                    <br />
+                    @Html.ActionLink("Jump to my Sessions", "ViewSessionConroller")
+                    <br />
+                    @Html.ActionLink("Upcoming Sessions", "UpcomingSessionController")
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+
+
+    }
+
+
+}
+else
+{
+    <div class="jumbotron">
+        <h1>@ViewBag.Greeting</h1>
+        <h2>Check-In or View All your sessions at once!</h2>
+        <p>
+            RegiStrat allows you to store your all your sessions at once,
+            Provide feedback, and so much more....
+        </p>
+
+    </div>
+}</html>

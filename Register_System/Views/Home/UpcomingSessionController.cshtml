@@ -1,0 +1,23 @@
+﻿@model Register_System.Models.Session
+
+@{
+    ViewBag.Title = "UpcomingSessionController";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Upcoming Sessions</h2>
+<h4>Sessions yet to come</h4>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.LabelFor(m => m.SessionTitle)</th>
+            <th>@Html.LabelFor(m => m.SessionDate)</th>
+            <th>@Html.LabelFor(m => m.SessionDescription)</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr></tr>
+    </tbody>
+</table>

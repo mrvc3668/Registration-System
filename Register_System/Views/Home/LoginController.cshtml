@@ -1,0 +1,35 @@
+﻿@model Register_System.Models.User
+
+@{
+    ViewBag.Title = "LoginController";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Login</h2>
+<br />
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Login Incorrect")
+    <div class="col-xs-4">
+
+        @Html.Label("Username")
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+        <p>@Html.ValidationMessageFor(m => m.UserName)</p>
+
+        @Html.Label("Password")
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <p>@Html.ValidationMessageFor(m => m.Password)</p>
+
+        <br />
+
+        <p style="text-align:right">
+            <input type="submit" name="login_one" value="Login" class="btn btn-success btn-outline-secondary" />
+        </p>
+
+        <p style="text-align:right">  @Html.ActionLink("New User?", "RegisterController")</p>
+
+    </div>
+
+}

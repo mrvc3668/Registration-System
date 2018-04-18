@@ -1,0 +1,25 @@
+﻿@model Register_System.Models.Session
+
+@{
+    ViewBag.Title = "CreatedSession";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>One-Time Code:</h2>
+
+
+<h1 style="text-align:center"><strong>@ViewBag.Code</strong></h1>
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary(true, "Error occurred")
+
+    <p style="text-align:center">
+        <strong>Code Expires: </strong>
+    </p>
+
+    <input type="submit" value="De-activate code" class="btn btn-success btn-outline-secondary" />
+
+}

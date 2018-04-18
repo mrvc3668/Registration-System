@@ -1,0 +1,41 @@
+﻿@model Register_System.Models.User
+
+@{
+    ViewBag.Title = "RegisterController";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+<h2>Create New Account</h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Error occurred")
+    <div class="col-xs-4">
+        @Html.Label("Username")
+        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })
+        <p>@Html.ValidationMessageFor(m => m.UserName)</p>
+
+        @Html.Label("Division")
+        @Html.TextBoxFor(m => m.Division, new { @class = "form-control" })
+        <p>@Html.ValidationMessageFor(m => m.Division)</p>
+
+        @Html.Label("Position")
+        @Html.TextBoxFor(m => m.Position, new { @class = "form-control" })
+        <p>@Html.ValidationMessageFor(m => m.Position)</p>
+
+        @Html.Label("Password")
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <p>@Html.ValidationMessageFor(m => m.Password)</p>
+
+        @Html.Label("Verify Password")
+        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+        <p>@Html.ValidationMessageFor(m => m.ConfirmPassword)</p>
+
+        <br />
+
+        <p style="text-align:right">
+            <input type="submit" value="Register" class="btn btn-success btn-outline-secondary" />
+        </p>
+
+    </div>
+}

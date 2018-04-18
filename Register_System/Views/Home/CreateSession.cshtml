@@ -1,0 +1,50 @@
+﻿@model Register_System.Models.Session
+
+@{
+    ViewBag.Title = "CreateSession";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+}
+
+
+
+<h2>New Session</h2>
+
+<h4>New Session with a new Check-in code</h4>
+
+<br />
+
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true, "Error occurred")
+    {
+        <div class="col-xs-4">
+            @Html.Label("Session Title")
+            @Html.TextBoxFor(m => m.SessionTitle, new { @class = "form-control" })
+            <p>@Html.ValidationMessageFor(m => m.SessionTitle)</p>
+
+            @Html.Label("Session Date")
+            @Html.TextBoxFor(m => m.SessionDate, new { @class = "form-control" })
+            <p>@Html.ValidationMessageFor(m => m.SessionDate)</p>
+
+            @*@Html.Label("Session Duration")
+            @Html.TextBoxFor(m => m.se, new { @class = "form-control" })
+            <p>@Html.ValidationMessageFor(m => m.Duration)</p>*@
+
+            @Html.Label("Session Description")
+            @Html.TextAreaFor(m => m.SessionDescription, new { @class = "form-control" })
+            <p>@Html.ValidationMessageFor(m => m.SessionDescription)</p>
+
+            @Html.Label("Session Code")
+            @Html.TextBoxFor(m => m.UniqueCode, new { @Value = ViewBag.code, @readonly = ViewBag.code, @class = "form-control" })
+
+            <br />
+
+            <p style="text-align:right">
+                <input type="submit" value="Create Session" class="btn btn-success btn-outline-secondary" />
+            </p>
+
+        </div>
+
+    }
+}
