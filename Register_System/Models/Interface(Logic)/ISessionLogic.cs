@@ -13,7 +13,7 @@ namespace Register_System.Models.Interface_Logic_
         void GetTempSessionResults(Session session);
         bool TransferSession(Session session, int userid);
         void GetViewSession(Session session, int userid);
-        void GetAttendedSession(Session session);
+        List<Session> GetAttendedSession(Session session);
         bool CreateTempSession(string temptitle, string tempdate, string tempdescr, int tempcode);
     }
 }

@@ -70,3 +70,4 @@ C:\Users\Vusi.Mngomezulu\Documents\Visual Studio 2015\Projects\Register_System\R
 C:\Users\Vusi.Mngomezulu\Documents\Visual Studio 2015\Projects\Register_System\Register_System\bin\System.Web.Mvc.xml
 C:\Users\Vusi.Mngomezulu\Documents\Visual Studio 2015\Projects\Register_System\Register_System\obj\Debug\Register_System.dll
 C:\Users\Vusi.Mngomezulu\Documents\Visual Studio 2015\Projects\Register_System\Register_System\obj\Debug\Register_System.pdb
+C:\Users\Vusi.Mngomezulu\Documents\Visual Studio 2015\Projects\Register_System\Register_System\obj\Debug\Register_System.csprojResolveAssemblyReference.cache

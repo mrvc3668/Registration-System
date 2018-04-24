@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace Register_System.Models.Class_Logic_
@@ -47,8 +48,10 @@ namespace Register_System.Models.Class_Logic_
             return isTrue;
         }
 
-        public void GetAttendedSession(Session session)
+        public List<Session> GetAttendedSession(Session session)
         {
+            List<Session> sessions = new List<Session>();
+
             using (var context = new Model1())
             {
                 var result = context.Sessions.ToList();
@@ -61,7 +64,9 @@ namespace Register_System.Models.Class_Logic_
                     session.SessionDescription = d.SessionDescription;
                     session.UniqueCode = d.UniqueCode;
                 }
+                sessions.Add(session);
             }
+            return sessions.ToList();
         }
 
         public void GetTempSessionResults(Session session)

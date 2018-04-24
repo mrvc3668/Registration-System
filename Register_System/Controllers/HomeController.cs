@@ -4,6 +4,7 @@ using Register_System.Models;
 using Register_System.Models.Interface_Logic_;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
 
@@ -218,11 +219,7 @@ namespace Register_System.Controllers
         public ActionResult ViewAttendedSession(Session session)
         {   
 
-            List<Session> sessions = new List<Session>();
-
-            sessionlogic.GetAttendedSession(session);
-
-            sessions.Add(session);
+            List<Session> sessions = sessionlogic.GetAttendedSession(session);
 
             return View(sessions);
         }
