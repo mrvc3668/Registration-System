@@ -1,6 +1,4 @@
-﻿
-
-using Register_System.Models;
+﻿using Register_System.Models;
 using Register_System.Models.Interface_Logic_;
 using System;
 using System.Collections.Generic;
@@ -32,7 +30,6 @@ namespace Register_System.Controllers
         [Authorize]
         public ActionResult Index()
         {
-
             int Hour = DateTime.Now.Hour;
 
             ViewBag.Greeting = Hour < 12 ? "Good Morning" : "Good Afternoon" + ":";
@@ -63,7 +60,6 @@ namespace Register_System.Controllers
 
                 if (userlogic.Login(userinfo.UserName, userinfo.Password) > 0)
                 {
-
                     FormsAuthentication.SetAuthCookie(userinfo.UserName, true);
 
                     Session["UserType"] = userinfo.UserType;
@@ -218,9 +214,7 @@ namespace Register_System.Controllers
         [HttpGet]
         public ActionResult ViewAttendedSession(Session session)
         {   
-
             List<Session> sessions = sessionlogic.GetAttendedSession(session);
-
             return View(sessions);
         }
 

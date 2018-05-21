@@ -133,9 +133,7 @@ namespace Register_System.Models.Class_Logic_
             }
                 return result;
         }
-
         
     }
-
 
 }
