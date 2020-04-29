@@ -1,4 +1,4 @@
 # Registration-System
 
 
-A simple C# project using the Model View Contrtol pattern 
+A simple C# project using the Model View Control pattern 
